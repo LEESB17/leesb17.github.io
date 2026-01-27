@@ -117,8 +117,8 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Kookmin Univ.MAIRLAB"
   location         : "Seoul, South Korea"
-  email            : "godhead3618@gmail.com"
-  schoolemail      : "dinobin@Kookmin.ac.kr"
+  # email            : "godhead3618@gmail.com"
+  # schoolemail      : "dinobin@Kookmin.ac.kr"
   links:
     - label: "godhead3618@gmail.com" # <--- 여기에 표시하고 싶은 텍스트를 쓰세요.
       icon: "fas fa-fw fa-envelope-square"
