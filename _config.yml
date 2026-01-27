@@ -17,7 +17,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "ko-KR"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "test"
+title                    : "Sungbin LEE Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Sungbin LEE"
@@ -117,26 +117,26 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Kookmin Univ.MAIRLAB"
   location         : "Seoul, South Korea"
-  email            : "godhead3618@gmail.com / dinobin@kookmin.ac.kr"
+  email            : "godhead3618@gmail.com"
+  schoolemail      : "dinobin@Kookmin.ac.kr"
   links:
-    - label: "Email"
+    - label: "godhead3618@gmail.com" # <--- 여기에 표시하고 싶은 텍스트를 쓰세요.
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
+      url: "mailto:godhead3618@gmail.com" # 클릭 시 메일 발송창이 뜹니다.
+    - label: "dinobin@kookmin.ac.kr" # <--- 학교 이메일도 추가하고 싶다면 이렇게 하나 더 만드세요.
+      icon: "fas fa-fw fa-university"
+      url: "mailto:dinobin@kookmin.ac.kr"
+    # - label: "Twitter"
+    #   icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
+    # - label: "Facebook"
+    #   icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/LEESB17"
-      # url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
+    # - label: "Instagram"
+    #   icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
 
 # Site Footer
