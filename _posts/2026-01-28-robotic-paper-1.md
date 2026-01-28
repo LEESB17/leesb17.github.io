@@ -8,7 +8,7 @@ tags:
   - SceneGraph
 ---
 
-# Interaction-Driven Updates: 3D Scene Graph Maintenance During Robot Task Executionz  
+# Interaction-Driven Updates: 3D Scene Graph Maintenance During Robot Task Execution
 
 ### [ 논문 핵심 요약 ]
 1. 문제 정의 기존 로봇 시스템은 작업 수행 시 미리 구축된 정적인 (Static) 장면 정보에만 의존하는 경향이 있습니다. 이로 인해 작업 도중 물체의 위치가 바뀌거나 환경이 변하는 동적인 (Dynamic) 상황이 발생하면 로봇이 이에 적절히 대응하지 못하고 작업에 실패하는 문제가 발생 합니다.
