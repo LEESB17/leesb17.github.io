@@ -1,7 +1,7 @@
 ---
-title: "Paper Reviews"
+title: "Isaac Sim Research"
 layout: category
-permalink: /paper/
-taxonomy: Paper
+permalink: /isaacsim/
+taxonomy: isaacsim
 author_profile: true
 ---
