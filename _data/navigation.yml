@@ -2,6 +2,8 @@
 main:
   - title: "Paper"
     url: /categories/#paper/
+  - title: "Isaac Sim"        # <--- 추가할 메뉴 이름
+    url: /categories/#isaacsim # <--- 클릭 시 이동할 위치
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
   #   url: /year-archive/
