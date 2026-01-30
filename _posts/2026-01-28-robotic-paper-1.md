@@ -11,7 +11,7 @@ math: true
 
 ## Interaction-Driven Updates: 3D Scene Graph Maintenance During Robot Task Execution
 
-#### [ 논문 핵심 요약 ]
+#### [ 논문 간단 요약 ]
 1. **문제 정의:** 기존 로봇 시스템은 작업 수행 시 미리 구축된 정적인 (Static) 장면 정보에만 의존하는 경향이 있습니다. 이로 인해 작업 도중 물체의 위치가 바뀌거나 환경이 변하는 동적인 (Dynamic) 상황이 발생하면 로봇이 이에 적절히 대응하지 못하고 작업에 실패하는 문제가 발생 합니다.
 
 2. **해결 방법:** 로봇이 환경과 직접 상호작용하며 정보를 갱신하는 상호작용 기반 (Interaction-driven) 업데이트 방식을 제안 합니다. 이를 위해 최적의 시야를 확보하는 관측 지점 선택 모듈 과 실시간으로 변화를 감지하여 3D 장면 그래프를 갱신하는 동적 장면 유지 관리 모듈 을 결합하여 시스템을 구축 하였습니다.
@@ -21,7 +21,7 @@ math: true
 4. **한계점:** 논문의 실험 환경을 넘어선 매우 복잡하거나 극도로 혼잡한 (Highly cluttered) 환경에서의 실시간 연산 효율성에 대한 추가 검증이 필요할 수 있습니다. 또한, 상호작용 과정에서 발생하는 물리적 제약이나 예기치 못한 센서 노이즈 가 데이터 갱신 정확도에 미치는 영향에 대해 더욱 심도 있는 연구가 요구 됩니다.
 
 
-#### [ 추가설명 ] 
+#### [ 핵심 프로세스 ] 
 {% include figure image_path="/assets/images/robotic-paper-screenshot.png" alt="로보틱스 페이퍼 스크린샷" caption="figure2" class="full" %}
 
 1. **Observation Points Selection Module (좌측 파란색 박스)**
@@ -49,3 +49,23 @@ math: true
 - **Add/Reduce:** 물체가 새로 생겼는지(Add) 혹은 사라졌는지(Reduce)를 시각적으로 파악합니다.
 
 - **Update 3DSG:** 변화된 내용을 바탕으로 3D Scene Graph 의 노드와 연결 관계를 즉시 갱신합니다.
+
+#### [ 결과 ]
+{% include figure image_path="Screenshot from 2026-01-30 13-19-27.png" alt="로보틱스 페이퍼 스크린샷" caption="table I" class="full" %}
+
+{% include figure image_path="Screenshot from 2026-01-30 13-19-17.png" alt="로보틱스 페이퍼 스크린샷" caption="table III" class="full" %}
+
+**Table 1 결과 요약 (주요 수치)**
+- **성능 지표:** NRA (노드 인식 정확도) 평균 88.48%, ERA (엣지 인식 정확도) 평균 86.34%, WJS (가중 자카드 유사도) 평균 95.04% 를 기록했습니다. 
+
+- **환경 적응성:** 실제 방(room 1, 2, 3)과 시뮬레이션 환경(floorplan) 모두에서 WJS 가 94% 이상을 유지하며 매우 높은 일관성을 보였습니다. 
+
+- **한계 발견:** 열쇠, 숟가락, 펜과 같은 작은 물체들은 카메라 해상도의 한계로 인해 일부 환각(NHP) 현상이 발생하기도 했습니다.
+
+**Table 3 결과 요약 (모듈별 영향)**
+- **Ours (전체 시스템):** NRA 88.48%, WJS 95.04% 로 최고의 성능을 보입니다. 
+
+- **w/o Dynamic Scene Maintenance (동적 유지 모듈 제거):** NRA 가 68.93% 로 급격히 떨어집니다. 이는 단순히 사진을 찍는 것보다 VLM을 통한 4단계 업데이트 과정이 정보의 정확성을 높이는 데 핵심적임을 보여줍니다. 
+
+- **w/o Observation Point Selection (관측 지점 선택 제거):** 최적의 위치를 찾지 않고 랜덤한 지점에서 관측할 경우 NRA 가 74.62% 로 하락합니다. 이는 물체를 잘 볼 수 있는 '각도'를 선정하는 것이 인식 성능에 큰 영향을 미친다는 증거입니다.
+
