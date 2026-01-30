@@ -51,9 +51,9 @@ math: true
 - **Update 3DSG:** 변화된 내용을 바탕으로 3D Scene Graph 의 노드와 연결 관계를 즉시 갱신합니다.
 
 #### [ 결과 ]
-{% include figure image_path="Screenshot from 2026-01-30 13-19-27.png" alt="로보틱스 페이퍼 스크린샷" caption="table I" class="full" %}
+{% include figure image_path="/assets/images/Screenshot from 2026-01-30 13-19-27.png" alt="로보틱스 페이퍼 스크린샷" caption="table I" class="full" %}
 
-{% include figure image_path="Screenshot from 2026-01-30 13-19-17.png" alt="로보틱스 페이퍼 스크린샷" caption="table III" class="full" %}
+{% include figure image_path="/assets/images/Screenshot from 2026-01-30 13-19-17.png" alt="로보틱스 페이퍼 스크린샷" caption="table III" class="full" %}
 
 **Table 1 결과 요약 (주요 수치)**
 - **성능 지표:** NRA (노드 인식 정확도) 평균 88.48%, ERA (엣지 인식 정확도) 평균 86.34%, WJS (가중 자카드 유사도) 평균 95.04% 를 기록했습니다. 
