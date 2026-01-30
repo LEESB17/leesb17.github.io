@@ -24,28 +24,28 @@ math: true
 #### [ 추가설명 ] 
 {% include figure image_path="/assets/images/robotic-paper-screenshot.png" alt="로보틱스 페이퍼 스크린샷" caption="figure2" %}
 
-1. **==Observation Points Selection Module (좌측 파란색 박스)==**
+1. **Observation Points Selection Module (좌측 파란색 박스)**
 특정 작업 지침을 생성하기 전에, 각 자산 주변에 여러 관측 지점이 생성됩니다. 각 자산에 대한 최적의 관측 지점은 다양한 점에서 이미지 정보를 분석하여 결정됩니다.
 
 세부 프로세스
-- Candidate Generation: 자산 주변에 충돌이 없는 안전한 관측 후보 지점들을 생성합니다.
+- **Candidate Generation:** 자산 주변에 충돌이 없는 안전한 관측 후보 지점들을 생성합니다.
 
-- BLIP-2 & Cosine Similarity: 각 지점에서 찍은 RGB 이미지 와 3DSG의 텍스트 정보를 BLIP-2 모델에 입력합니다.
+- **BLIP-2 & Cosine Similarity:** 각 지점에서 찍은 RGB 이미지 와 3DSG의 텍스트 정보를 BLIP-2 모델에 입력합니다.
 
-- Value Generate Module: 이미지와 텍스트 사이의 코사인 유사도 를 계산하여, 자산이 가장 명확하게 식별되는 지점을 Best Observation Point 로 최종 선택합니다.
+- **Value Generate Module:** 이미지와 텍스트 사이의 코사인 유사도 를 계산하여, 자산이 가장 명확하게 식별되는 지점을 Best Observation Point 로 최종 선택합니다.
 
-2. **==LLM Planner & Action Sequences (상단 검은색 박스)==**
+2. **LLM Planner & Action Sequences (상단 검은색 박스)**
 로봇은 LLM 분석을 통해 구체적이고 실행 가능한 동작 시퀀스를 얻으며, 우리의 장면 정보 업데이트 프로세스는 동작 서브태스크의 일부입니다.
 
 세부 프로세스
 - 사용자의 명령(Prompt)을 받으면, LLM은 {goto: observation point}와 {collect: scene info} 같은 세부 단계를 실행 계획(Action Sequences)에 포함시킵니다.
 
-3. **==(3) Dynamic Scene Maintenance Module (우측/하단 노란색 박스)==**
+3. **Dynamic Scene Maintenance Module (우측/하단 노란색 박스)**
 물체 변화가 감지되면, 관측 지점에서 얻은 이미지 정보가 자산 위의 모든 물체에 대한 최신 정보를 업데이트하는 데 사용됩니다. 이 정보는 이후 3DSG에 통합됩니다.
 
 세부 프로세스
-- Change Detection Module: 이전 시점의 이미지($Image_{t-1}$)와 현재 이미지($Image_t$)를 비교하여 변화를 감지합니다.
+- **Change Detection Module:** 이전 시점의 이미지($Image_{t-1}$)와 현재 이미지($Image_t$)를 비교하여 변화를 감지합니다.
 
-- Add/Reduce: 물체가 새로 생겼는지(Add) 혹은 사라졌는지(Reduce)를 시각적으로 파악합니다.
+- **Add/Reduce:** 물체가 새로 생겼는지(Add) 혹은 사라졌는지(Reduce)를 시각적으로 파악합니다.
 
-- Update 3DSG: 변화된 내용을 바탕으로 3D Scene Graph 의 노드와 연결 관계를 즉시 갱신합니다.
+- **Update 3DSG:** 변화된 내용을 바탕으로 3D Scene Graph 의 노드와 연결 관계를 즉시 갱신합니다.
