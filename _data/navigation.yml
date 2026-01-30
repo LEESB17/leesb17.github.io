@@ -1,13 +1,8 @@
-# main links
-main:
+# sidebar navigation links
+sidebar-nav:
+  - title: "Profile"
+    url: /profile/
   - title: "Paper"
     url: /paper/
-  - title: "Isaac Sim"        # <--- 추가할 메뉴 이름
-    url: /isaacsim/ # <--- 클릭 시 이동할 위치
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: "Isaac Sim"
+    url: /isaacsim/
