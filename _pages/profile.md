@@ -10,6 +10,28 @@ permalink: /profile/
 
 ---
 
+## Research Experience
+
+### MAIRLab (Machine Artificial Intelligence Robotics Lab), Kookmin University
+*Undergraduate Researcher, 2025 ~ present*
+
+<!-- TODO: 아래에 MAIRLab에서 진행한 연구/작업 내용을 채워주세요 -->
+
+**Research Topics**
+- 3D SceneGraph
+- Embodied AI
+- Sim to Real
+
+**Projects**
+- 2026 ~ 2027 시뮬레이터를 통한 데이터셋 생성 및 이미지 복구 기업과제 참여
+
+**Skills & Tools Used**
+- ROS2
+- Isaac Sim
+- Habitat Sim
+
+---
+
 ## Awards & Activities
 
 ### FOSCAR (The autonomous vehicle club of the School of Software, Kookmin University)
