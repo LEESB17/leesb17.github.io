@@ -36,6 +36,62 @@ toc: false
 details summary { cursor:pointer; font-size:0.8rem; color:#666; margin-top:6px; }
 details summary:hover { color:#333; }
 details[open] summary { color:#333; }
+/* 분기 구분선 */
+.tl-quarter {
+  position: relative;
+  margin: 2rem 0 1.2rem -28px;
+  padding-left: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.tl-quarter-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  background: #555;
+  padding: 2px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  letter-spacing: .04em;
+}
+.tl-quarter::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e0e0e0;
+}
+/* 기업과제 섹션 */
+.corp-section {
+  margin-top: 3rem;
+  border-top: 2px solid #e0e0e0;
+  padding-top: 1.5rem;
+}
+.corp-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.corp-section-title::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #7c3aed;
+  display: inline-block;
+}
+.corp-card {
+  border: 1px solid #e4d4ff;
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: #faf7ff;
+  margin-bottom: 1rem;
+}
+.corp-card:hover { border-color:#a78bfa; }
 </style>
 
 <div class="tl-legend">
@@ -43,10 +99,11 @@ details[open] summary { color:#333; }
   <span><span class="tl-legend-dot" style="background:#2e9e5e"></span>구현 / 개발</span>
   <span><span class="tl-legend-dot" style="background:#c47c10"></span>하드웨어 / 환경</span>
   <span><span class="tl-legend-dot" style="background:#c0392b"></span>실험 / 분석</span>
-  <span><span class="tl-legend-dot" style="background:#7c3aed"></span>기업과제</span>
 </div>
 
 <div class="tl-wrap">
+
+<div class="tl-quarter"><span class="tl-quarter-label">2025 Q3 · 7월 – 9월</span></div>
 
 <!-- 1 -->
 <div class="tl-item">
@@ -199,6 +256,8 @@ details[open] summary { color:#333; }
   </div>
 </div>
 
+<div class="tl-quarter"><span class="tl-quarter-label">2025 Q4 · 10월 – 12월</span></div>
+
 <!-- 6 -->
 <div class="tl-item">
   <div class="tl-dot" style="background:#daa050;border-color:#c47c10"></div>
@@ -315,6 +374,8 @@ details[open] summary { color:#333; }
     </details>
   </div>
 </div>
+
+<div class="tl-quarter"><span class="tl-quarter-label">2026 Q1 · 1월 – 3월</span></div>
 
 <!-- 10 -->
 <div class="tl-item">
@@ -526,12 +587,16 @@ details[open] summary { color:#333; }
   </div>
 </div>
 
-<!-- 17 -->
-<div class="tl-item">
-  <div class="tl-dot" style="background:#a78bfa;border-color:#7c3aed"></div>
-  <div class="tl-card">
+
+</div>
+
+<!-- 기업과제 별도 섹션 -->
+<div class="corp-section">
+  <div class="corp-section-title">기업과제 (산학협력)</div>
+
+  <div class="corp-card">
     <div class="tl-date">2026 ~ 2027</div>
-    <div class="tl-title">시뮬레이터를 통한 데이터셋 생성 및 이미지 복구 기업과제 참여</div>
+    <div class="tl-title">시뮬레이터를 통한 데이터셋 생성 및 이미지 복구</div>
     <div class="tl-tags">
       <span class="tl-tag tag-corp">기업과제</span>
       <span class="tl-tag tag-impl">구현</span>
@@ -550,6 +615,5 @@ details[open] summary { color:#333; }
       </div>
     </details>
   </div>
-</div>
 
 </div>
