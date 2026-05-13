@@ -119,7 +119,7 @@ permalink: /profile/
 <div class="pf-section-header"><h2>Research Experience</h2></div>
 
 <div class="pf-lab-card">
-  <div class="pf-lab-title">MAIRLab (Machine Artificial Intelligence Robotics Lab), Kookmin University</div>
+  <div class="pf-lab-title"><a href="https://mairlab-km.github.io/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid currentColor;">MAIRLab</a> (Machine Artificial Intelligence Robotics Lab), Kookmin University</div>
   <div class="pf-lab-period">Undergraduate Researcher · 2025 ~ present</div>
 
   <div class="pf-sub-title">Research Topics</div>
