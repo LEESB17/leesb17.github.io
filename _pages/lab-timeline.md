@@ -6,7 +6,7 @@ author_profile: true
 toc: false
 ---
 
-> 2025.07 ~ 2026.04 랩미팅 발표 기반 연구 활동 정리입니다.
+> 2025.07 ~ 2026.05 랩미팅 발표 기반 연구 활동 정리입니다.
 
 <style>
 /* 범례 */
@@ -670,6 +670,92 @@ toc: false
               </ul>
             </div>
             <div class="tl-note">성능: REACT 평균 50ms, freespace 추가 시 150ms. 빈공간 task 5/5, 씬에 없던 desk 등장 task 5/5. Habitat 넓은 씬에서 추가 검증 예정.</div>
+          </div>
+        </details>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<!-- ───────────── 2026 Q2 ───────────── -->
+<details class="tl-quarter-details">
+  <summary>
+    <div class="tl-q-left">
+      <span class="tl-q-label">2026 Q2 · 4월 – 6월</span>
+      <div class="tl-q-bullets">
+        <span class="tl-q-bullet">RoboSpatial & Depth VLM 탐색</span>
+        <span class="tl-q-bullet">Freespace VLM 파인튜닝</span>
+        <span class="tl-q-bullet">데이터셋 파이프라인 구축</span>
+      </div>
+    </div>
+    <span class="tl-q-arrow">▶</span>
+  </summary>
+  <div class="tl-wrap">
+
+    <!-- 17 -->
+    <div class="tl-item">
+      <div class="tl-dot" style="background:#8aabde;border-color:#5c85d6"></div>
+      <div class="tl-card">
+        <div class="tl-date">2026.04.28</div>
+        <div class="tl-title">RoboSpatial & Depth VLM 탐색 및 테스트</div>
+        <div class="tl-tags">
+          <span class="tl-tag tag-paper">논문</span>
+          <span class="tl-tag tag-impl">구현</span>
+          <span class="tl-tag tag-exp">실험</span>
+        </div>
+        <details>
+          <summary>자세히 보기</summary>
+          <div style="margin-top:10px">
+            <div class="tl-section">
+              <div class="tl-section-title">다룬 논문</div>
+              <ul class="tl-ul">
+                <li>RoboSpatial: Teaching Spatial Understanding to 2D and 3D VLMs for Robotics (CVPR 2025) — top-down map 활용 빈공간 추론, 공간관계 VLM 벤치마크 제시</li>
+                <li>Clio: Real-time Task-Driven Open-Set 3D Scene Graphs (RA-L 2024) — task 기반 씬그래프 단위 병합</li>
+                <li>SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model</li>
+                <li>SpatialBot: Precise Spatial Understanding with Vision Language Models (ICRA 2025)</li>
+                <li>N3D-VLM: Native 3D Grounding Enables Accurate Spatial Reasoning in Vision-Language Models</li>
+              </ul>
+            </div>
+            <div class="tl-section">
+              <div class="tl-section-title">구현 / 작업</div>
+              <ul class="tl-ul">
+                <li>SpatialBot · N3D-VLM · RoboPoint 3종 비교 테스트 (일반 물체 좌표 추론 / 책상 빈공간 좌표 추론)</li>
+                <li>7b 모델 기준 빈공간 추론 성능 불충분 확인</li>
+                <li>RoboSpatial 파이프라인으로 ScanNet 데이터셋 파인튜닝용 데이터 생성 시작</li>
+              </ul>
+            </div>
+            <div class="tl-note">Depth VLM 계열 모두 빈공간 처리 미지원 → 별도 파인튜닝 필요. RoboSpatial 데이터셋·학습 모델 미공개라 직접 튜닝 예정. HOPE · ScanNet 등 다양한 indoor 데이터셋 활용 계획.</div>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- 18 -->
+    <div class="tl-item">
+      <div class="tl-dot" style="background:#6dc49a;border-color:#2e9e5e"></div>
+      <div class="tl-card">
+        <div class="tl-date">2026.05.12</div>
+        <div class="tl-title">RoboSpatial 기반 Freespace 파인튜닝 파이프라인</div>
+        <div class="tl-tags">
+          <span class="tl-tag tag-impl">구현</span>
+          <span class="tl-tag tag-exp">실험</span>
+        </div>
+        <details>
+          <summary>자세히 보기</summary>
+          <div style="margin-top:10px">
+            <div class="tl-section">
+              <div class="tl-section-title">구현 / 작업</div>
+              <ul class="tl-ul">
+                <li>RoboSpatial 파이프라인 + 직접 제작 freespace 전용 img-QA 쌍 결합</li>
+                <li>3D BB로 책상 높이·범위 검출 → 물체 영역 freespace에서 제외하는 파이프라인 구축</li>
+                <li>Depth RANSAC으로 책상 표면 찾아 올려진 물체 필터링</li>
+                <li>Grounding DINO + Depth로 책상 위 물체 검출 파이프라인 추가</li>
+                <li>Qwen 7b 파인튜닝 (ScanNet + GraspNet + HOPE, 이미지 800장 · QA 약 7000개)</li>
+                <li>에어로스페이스 과제 관련 작업 병행</li>
+              </ul>
+            </div>
+            <div class="tl-note">TabletTop 이외 이미지에서 성능 저하 확인. 3D BB가 실제 물체보다 크게 설정되어 먼 거리 책상 freespace 계산 부정확. 추가 데이터셋(ScanNet++, 3D-Front) 활용 및 재학습 예정.</div>
           </div>
         </details>
       </div>
