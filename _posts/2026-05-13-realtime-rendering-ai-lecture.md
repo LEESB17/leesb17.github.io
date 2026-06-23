@@ -1,4 +1,5 @@
 ---
+published: false
 title: "실시간 게임 렌더링에서의 AI 강의 후기"
 categories:
   - etc
